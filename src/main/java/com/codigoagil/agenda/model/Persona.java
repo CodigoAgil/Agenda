@@ -32,7 +32,7 @@ public class Persona {
 	private String apellido2;
 
 	/** The direccion. */
-	@Column(name = "direccion", length = 15, nullable = false)
+	@Column(name = "direccion", length = 100, nullable = false)
 	private String direccion;
 
 	/** The telefono 1. */
