@@ -21,7 +21,7 @@
         </div>
       </header>
       <main class="px-3">
-        <h1>Modifica el registro.</h1>
+        <h1>Inserta un nuevo registro.</h1>
         <br><br>
         <div class="container">
           <form class="row g-3" th:action="@{/savePersona}" th:object="${persona}" method="POST">
@@ -54,7 +54,8 @@
               <input type="text" class="form-control" id="inputZip" placeholder="9 dígitos"  th:field="*{telefono2}">
             </div>
             <div class="col-12">
-              <button type="submit" class="btn btn-primary">Modificar el registro</button>
+              <button type="submit" class="btn btn-primary">Insertar nuevo registro</button>
+              <a href="#" th:href="@{/agenda}"  class="btn btn-success">Volver a la agenda</a>
             </div>
           </form>
         </div>
