@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Código Ágil">
+    <title>Agenda telefónica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </head>
+  <body class="d-flex h-100 text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="mb-auto">
+        <div>
+          <h3 class="float-md-start mb-0">Código Ágil</h3>
+          <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+            <a class="nav-link" href="#" th:href="@{/agenda}">Contactos</a>
+          </nav>
+        </div>
+      </header>
+      <main class="px-3">
+        <h1>Modifica el registro.</h1>
+        <br><br>
+        <div class="container">
+          <form class="row g-3" th:action="@{/updatePersona}" th:object="${persona}" method="POST">
+          <!-- idPersona  No sera visible en el formulario pero
+                        es necesario para hacer referencia a la id a modificar, si no insertara un nuevo registro -->
+            <div class="form-group" style="display: none">
+              <label for="idPersona">idPersona</label>
+              <input th:field="*{idPersona}" type="text" class="form-control" id="idPersona" placeholder="Inserta el idPersona" >
+            </div>
+            <div class="col-md-4">
+              <label for="inputEmail4" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="inputEmail4" placeholder="Inserta el nombre" th:field="*{nombre}">
+            </div>
+            <div class="col-md-4">
+              <label for="inputPassword4" class="form-label">Apellido 1</label>
+              <input type="text" class="form-control" id="inputPassword4" placeholder="Inserta el primer apellido" th:field="*{apellido1}">
+            </div>
+            <div class="col-md-4">
+              <label for="inputPassword4" class="form-label">Apellido 2</label>
+              <input type="text" class="form-control" id="inputPassword4" placeholder="Inserta el segundo apellido" th:field="*{apellido2}">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Dirección</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="Ejemplo: C/ Finello 12" th:field="*{direccion}">
+            </div>
+            <div class="col-md-4">
+              <label for="inputCity" class="form-label">Email</label>
+              <input type="text" class="form-control" id="inputCity" placeholder="registro@registro.com" th:field="*{email}">
+            </div>
+            <div class="col-md-4">
+              <label for="inputCity" class="form-label">Teléfono 1</label>
+              <input type="text" class="form-control" id="inputCity" placeholder="9 dígitos"  th:field="*{telefono1}">
+            </div>
+            <div class="col-md-4">
+              <label for="inputZip" class="form-label">Teléfono 2</label>
+              <input type="text" class="form-control" id="inputZip" placeholder="9 dígitos"  th:field="*{telefono2}">
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Modificar el registro</button>
+              <a href="#" th:href="@{/agenda}"  class="btn btn-success">Volver a la agenda</a>
+            </div>
+          </form>
+        </div>
+      </main>
+      <br><br>
+      <footer >
+        <p>Ejemplo creado por <a href="http://codigoagil.es/" target="_blank">Código Ágil</a></p>
+      </footer>
+    </div>
+</html>

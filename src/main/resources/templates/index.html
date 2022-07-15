@@ -24,12 +24,17 @@
         <h1>Bienvenido a tu agenda personal.</h1>
         <br><br>
         <p class="lead">
-          <a href="#" th:href="@{/agenda}"  class="btn btn-lg btn-secondary fw-bold border-white ">Ver la agenda</a>
+        
+          <a href="#" th:href="@{/agenda}"  class="btn btn-lg btn-secondary fw-bold border-white ">
+          <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+          &nbsp;&nbsp;
+          Ver la agenda
+          </a>
         </p>
-      </main>
-     
+      </main>    
       <footer >
         <p>Ejemplo creado por <a href="http://codigoagil.es/" target="_blank">Código Ágil</a></p>
       </footer>
     </div>
+    </body>
 </html>
